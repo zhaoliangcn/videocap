@@ -22,7 +22,6 @@ Thumbs.db
 
 # npm
 npm-debug.log*
-package-lock.json
 
 # Local config
 .npmrc

@@ -1,0 +1,198 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  background: rgba(30, 30, 30, 0.95);
+  color: #ffffff;
+  overflow: hidden;
+  -webkit-app-region: drag;
+  user-select: none;
+}
+
+.window-controls {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  display: flex;
+  gap: 8px;
+  -webkit-app-region: no-drag;
+  z-index: 100;
+}
+
+.window-btn {
+  width: 24px;
+  height: 24px;
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  font-size: 16px;
+  line-height: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s;
+}
+
+.window-btn.minimize {
+  background: #ffbd2e;
+  color: #995700;
+}
+
+.window-btn.minimize:hover {
+  background: #f1b03f;
+}
+
+.window-btn.close {
+  background: #ff5f57;
+  color: #8a0000;
+}
+
+.window-btn.close:hover {
+  background: #ff6b64;
+}
+
+.container {
+  padding: 40px 30px 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 24px;
+}
+
+.title {
+  font-size: 28px;
+  font-weight: 600;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  margin-bottom: 8px;
+}
+
+.status-indicator {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 20px;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 20px;
+}
+
+.status-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: #4ade80;
+  transition: all 0.3s;
+}
+
+.status-dot.recording {
+  background: #ef4444;
+  animation: pulse 1.5s infinite;
+}
+
+@keyframes pulse {
+  0%, 100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.5;
+    transform: scale(1.2);
+  }
+}
+
+.status-text {
+  font-size: 14px;
+  color: #a0a0a0;
+}
+
+.record-btn {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  border: 4px solid rgba(255, 255, 255, 0.1);
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  transition: all 0.3s;
+  -webkit-app-region: no-drag;
+  box-shadow: 0 8px 24px rgba(102, 126, 234, 0.3);
+}
+
+.record-btn:hover {
+  transform: scale(1.05);
+  box-shadow: 0 12px 32px rgba(102, 126, 234, 0.4);
+}
+
+.record-btn:active {
+  transform: scale(0.95);
+}
+
+.record-btn.recording {
+  background: linear-gradient(135deg, #ef4444 0%, #dc2626 100%);
+  box-shadow: 0 8px 24px rgba(239, 68, 68, 0.3);
+}
+
+.record-btn.recording:hover {
+  box-shadow: 0 12px 32px rgba(239, 68, 68, 0.4);
+}
+
+.record-icon {
+  width: 40px;
+  height: 40px;
+  background: #ffffff;
+  border-radius: 8px;
+  transition: all 0.3s;
+}
+
+.record-icon.recording {
+  border-radius: 50%;
+  width: 36px;
+  height: 36px;
+}
+
+.record-text {
+  font-size: 12px;
+  font-weight: 500;
+  color: #ffffff;
+}
+
+.shortcuts {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 16px;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 12px;
+  width: 100%;
+}
+
+.shortcut-item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  font-size: 13px;
+  color: #a0a0a0;
+}
+
+kbd {
+  display: inline-block;
+  padding: 4px 8px;
+  font-size: 12px;
+  line-height: 1;
+  color: #ffffff;
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 4px;
+  font-family: inherit;
+}

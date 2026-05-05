@@ -1,0 +1,56 @@
+{
+  "name": "videocap",
+  "version": "1.0.0",
+  "description": "A lightweight screen recording application built with Electron / 基于 Electron 的轻量级屏幕录制应用",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron .",
+    "build": "electron-builder",
+    "build:mac": "electron-builder --mac",
+    "build:win": "electron-builder --win",
+    "build:linux": "electron-builder --linux"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/zhaoliangcn/videocap.git"
+  },
+  "bugs": {
+    "url": "https://github.com/zhaoliangcn/videocap/issues"
+  },
+  "homepage": "https://github.com/zhaoliangcn/videocap#readme",
+  "keywords": [
+    "screen-recorder",
+    "screen-capture",
+    "electron",
+    "desktop-app",
+    "video-recording",
+    "屏幕录制"
+  ],
+  "author": "zhaoliangcn",
+  "license": "MIT",
+  "devDependencies": {
+    "electron": "^32.0.0",
+    "electron-builder": "^24.9.1"
+  },
+  "build": {
+    "appId": "com.videocap.app",
+    "productName": "VideoCap",
+    "directories": {
+      "output": "release"
+    },
+    "mac": {
+      "target": "dmg",
+      "category": "public.app-category.utilities",
+      "icon": "build/icon.icns"
+    },
+    "win": {
+      "target": "nsis",
+      "icon": "build/icon.ico"
+    },
+    "linux": {
+      "target": "AppImage",
+      "category": "Utility",
+      "icon": "build/icon.png"
+    }
+  }
+}

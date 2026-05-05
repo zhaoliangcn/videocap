@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>VideoCap - 屏幕录制</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="window-controls">
+    <button class="window-btn minimize" id="minimizeBtn">−</button>
+    <button class="window-btn close" id="closeBtn">×</button>
+  </div>
+  
+  <div class="container">
+    <h1 class="title">VideoCap</h1>
+    
+    <div class="status-indicator" id="statusIndicator">
+      <div class="status-dot" id="statusDot"></div>
+      <span class="status-text" id="statusText">就绪</span>
+    </div>
+    
+    <button class="record-btn" id="recordBtn">
+      <div class="record-icon"></div>
+      <span class="record-text">开始录制</span>
+    </button>
+    
+    <div class="shortcuts">
+      <div class="shortcut-item">
+        <kbd>⌘</kbd> + <kbd>⇧</kbd> + <kbd>R</kbd>
+        <span>开始/停止</span>
+      </div>
+      <div class="shortcut-item">
+        <kbd>⌘</kbd> + <kbd>⇧</kbd> + <kbd>S</kbd>
+        <span>停止录制</span>
+      </div>
+    </div>
+  </div>
+  
+  <script src="renderer.js"></script>
+</body>
+</html>
